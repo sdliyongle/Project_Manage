@@ -51,8 +51,8 @@ public class UserService {
      * 查看所有用户
      * @return
      */
-    public List<User> userList() {
-        return userDao.userList();
+    public List<User> userList(String userName) {
+        return userDao.userList(userName);
     }
 
 }

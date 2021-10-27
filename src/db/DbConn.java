@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public final class DbConn {
-    public static Connection getconn() {
+    public static Connection getconn(String dbName) {
         Connection conn = null;
 
         String user = "root";
         String passwd = "ZQ_xf949789978";
-        String url = "jdbc:mysql://localhost:3306/rbac?serverTimezone=GMT%2B8&useSSL=false";
+        String url = "jdbc:mysql://localhost:3306/"+dbName+"?serverTimezone=GMT%2B8&useSSL=false";
         //已加载完驱动
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

@@ -12,7 +12,7 @@ public class RespBean {
 	private String message;
 	private Object obj;
 
-	public RespBean(long code, String message, Object obj){
+	public RespBean(long code, String message,Object obj){
 		this.code = code;
 		this.message = message;
 		this.obj = obj;

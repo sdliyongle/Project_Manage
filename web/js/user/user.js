@@ -38,6 +38,7 @@ layui.config({
     //     }
     // });
 
+    //用户列表展示
     var tableIns = table.render({
         elem: '#user-table',
         url: '/user/list',
@@ -45,6 +46,7 @@ layui.config({
         cellMinWidth : 95,
         smartReloadModel: true,
         page: true,
+        id: "userListTable",
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
             {field: "id", title:'编号',fixed:"true", width:80},
@@ -56,6 +58,19 @@ layui.config({
         ]]
     });
 
+
+    //条件搜索按钮
+    $(".search_btn").on("click", function (){
+        console.log($("input[name='username']").val());
+        table.reload("userListTable", {
+            page: {
+                curr:1
+            },
+            where:{
+                userName: $("input[name='username']").val(),  //用户名
+            }
+        })
+    })
     // // 账号状态(正常/锁定)点击事件
     // form.on('switch(status)', function(data){
     //     if (data.elem.checked) {

@@ -1,10 +1,11 @@
 package user.controller;
 
-import org.json.JSONObject;
 import user.dao.UserDao;
 import user.entity.User;
+import org.json.JSONObject;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +30,7 @@ public class UserListServlet extends HttpServlet {
         System.out.println("进入了UserListServlet");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        List<User> listUser = userDao.userList();
+        List<User> listUser = userDao.userList(request.getParameter("userName"));
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("count",listUser.size());
         jsonObject.put("data", listUser);

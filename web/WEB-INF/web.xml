@@ -48,5 +48,26 @@
         <servlet-name>UserUpdateServlet</servlet-name>
         <url-pattern>/user/update</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>user.controller.UserLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/user/login</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- ================  device begin =================           -->
+    <servlet>
+        <servlet-name>device_file_servlet_action</servlet-name>
+        <servlet-class>device.file.ServletAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>device_file_servlet_action</servlet-name>
+        <url-pattern>/device_file_servlet_action</url-pattern>
+    </servlet-mapping>
+    <!-- ================  device end =================           -->
 </web-app>
 
