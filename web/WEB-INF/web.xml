@@ -3,7 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
+    <!-- ================  user begin =================           -->
+    <!-- ================  这是分功能的写法 =================           -->
     <servlet>
         <servlet-name>UserListServlet</servlet-name>
         <servlet-class>user.controller.UserListServlet</servlet-class>
@@ -58,6 +59,16 @@
         <url-pattern>/user/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UserRegisterServlet</servlet-name>
+        <servlet-class>user.controller.UserRegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserRegisterServlet</servlet-name>
+        <url-pattern>/user/register</url-pattern>
+    </servlet-mapping>
+    <!-- ================  user end =================           -->
+
 
     <!-- ================  device begin =================           -->
     <servlet>
@@ -69,5 +80,17 @@
         <url-pattern>/device_file_servlet_action</url-pattern>
     </servlet-mapping>
     <!-- ================  device end =================           -->
+
+    <!-- ================  user begin =================           -->
+    <!-- ================  这是集中写法 =================           -->
+<!--    <servlet>-->
+<!--        <servlet-name>UserServlet</servlet-name>-->
+<!--        <servlet-class>user.controller.UserServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>UserServlet</servlet-name>-->
+<!--        <url-pattern>/user</url-pattern>-->
+<!--    </servlet-mapping>-->
+    <!-- ================  user end =================           -->
 </web-app>
 

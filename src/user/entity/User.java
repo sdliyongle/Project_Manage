@@ -19,6 +19,8 @@ public class User {
 
     private Integer isDel;
 
+    private Integer roleId;
+
     public int getId() {
         return id;
     }
@@ -75,6 +77,14 @@ public class User {
         this.isDel = isDel;
     }
 
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -85,6 +95,7 @@ public class User {
                 ", userName='" + userName + '\'' +
                 ", remarks='" + remarks + '\'' +
                 ", isDel=" + isDel +
+                ", roleId=" + roleId +
                 '}';
     }
 }

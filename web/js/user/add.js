@@ -33,7 +33,7 @@ layui.config({
 
     form.on('submit(add)', function (form) {
         index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.8});
-        form.field.role = formSelects.value('role-select', 'val');
+        // form.field.role = formSelects.value('role-select', 'val');
         var url = "/user/add";
         console.log(form.field);
         $.post(url, form.field, function (res) {

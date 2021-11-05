@@ -11,15 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * 用户登录
- */
-public class UserLoginServlet extends HttpServlet {
-
+public class UserRegisterServlet extends HttpServlet {
     private final UserDao userDao = new UserDao();
     private static final long serialVersionUID = 1;
 
-    public UserLoginServlet() {
+    public UserRegisterServlet() {
         super();
     }
 
@@ -30,23 +26,26 @@ public class UserLoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        System.out.println("进入了UserLoginServlet");
+        System.out.println("进入了UserRegisterServlet");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         String userName = request.getParameter("userName");
+        String trueName = request.getParameter("trueName");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        User user = userDao.login(userName,password);
+        int roleId = Integer.parseInt(request.getParameter("role"));
+        User user = userDao.register(userName,trueName,email,password,roleId);
         JSONObject jsonObject = new JSONObject();
-        //这里是为了给前端返回信息，好提示用户，进行良好的交互，否则后端出错后，前端无响应，交互性不强。
-        if(user != null) {
-            jsonObject.put("code", 200);
-            jsonObject.put("message", "用户登录成功");
-            request.getSession().setAttribute("userName",userName);
+        //下面逻辑同登录
+        if(user == null) {
+            jsonObject.put("code", 500);
+            jsonObject.put("message", "用户注册失败");
         } else {
-            jsonObject.put("code",500);//500表示服务器出错
-            jsonObject.put("message","用户不存在或密码错误");
+            jsonObject.put("code", 200);
+            jsonObject.put("message", "用户注册成功");
         }
         System.out.println(jsonObject.toString());
         response.getWriter().write(jsonObject.toString());
     }
+
 }
