@@ -49,18 +49,6 @@
             <ul class="layui-nav layui-layout-right">
 
                 <li class="layui-nav-item feature-items">
-                    <a lay-event="github" title="Github 地址">
-                        <i class="ri-github-fill"></i>
-                    </a>
-                </li>
-
-                <li class="layui-nav-item feature-items">
-                    <a lay-event="website" title="前台">
-                        <i class="ri-earth-line"></i>
-                    </a>
-                </li>
-
-                <li class="layui-nav-item feature-items">
                     <a lay-event="clear" title="清理标签缓存"><i class="ri-brush-3-line"></i></a>
                 </li>
 
@@ -84,7 +72,7 @@
                 <li class="layui-nav-item user-selection">
                     <a>
                         <img src="images/avatar.png" class="layui-nav-img" alt="头像">
-                        <cite>管理员</cite>
+                        <cite>${user.userName}</cite>
                         <span class="layui-nav-more"></span>
                     </a>
                     <dl class="layui-nav-child">
@@ -96,7 +84,7 @@
                         </dd>
                         <hr>
                         <dd lay-unselect>
-                            <a href="./signIn.html">退出</a>
+                            <a href="./login.html">退出</a>
                         </dd>
                     </dl>
                 </li>
@@ -113,6 +101,28 @@
                         </a>
                     </li>
 
+                    <li class="layui-nav-item">
+                        <a lay-id="#" lay-url="#">
+                            <i class="ri-shield-keyhole-line"></i>&emsp;<cite>统计报表</cite>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a lay-id="view/user/user-statistics.html" lay-url="view/user/user-statistics.html">
+                                    <cite>用户统计</cite>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a lay-id="view/project/project-statistics.html" lay-url="view/project/project-statistics.html">
+                                    <cite>项目统计</cite>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a lay-id="view/document/document-statistics.html" lay-url="view/document/document-statistics.html">
+                                    <cite>文档统计</cite>
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
                     <li class="layui-nav-item">
                         <a lay-id="#" lay-url="#">
                             <i class="ri-shield-keyhole-line"></i>&emsp;<cite>权限管理</cite>
@@ -135,39 +145,40 @@
                             </dd>
                         </dl>
                     </li>
-
                     <li class="layui-nav-item">
-                        <a>
-                            <i class="ri-menu-add-line"></i>&emsp;<cite>多级菜单</cite>
+                        <a lay-id="view/project/project-list.html" lay-url="view/project/project-list.html">
+                            <i class="ri-menu-line"></i>&emsp;<cite>项目管理</cite>
                         </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a>
-                                    <cite>二级菜单</cite>
-                                </a>
-                                <dl class="layui-nav-child">
-                                    <dd>
-                                        <a>
-                                            <cite>三级菜单</cite>
-                                        </a>
-                                        <dl class="layui-nav-child">
-                                            <dd>
-                                                <a>
-                                                    <cite>四级菜单</cite>
-                                                </a>
-                                                <dl class="layui-nav-child">
-                                                    <dd>
-                                                        <a href="#" lay-id="https://www.baidu.com" lay-url="https://www.baidu.com">
-                                                            <cite>百度</cite>
-                                                        </a>
-                                                    </dd>
-                                                </dl>
-                                            </dd>
-                                        </dl>
-                                    </dd>
-                                </dl>
-                            </dd>
-                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-id="view/document/document-list.html" lay-url="view/document/document-list.html">
+                            <i class="ri-menu-line"></i>&emsp;<cite>文档管理</cite>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-id="view/fund/fund-list.html" lay-url="view/fund/fund-list.html">
+                            <i class="ri-menu-line"></i>&emsp;<cite>资金管理</cite>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-id="view/contract/contract-list.html" lay-url="view/contract/contract-list.html">
+                            <i class="ri-menu-line"></i>&emsp;<cite>合同管理</cite>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-id="view/notice/notice-list.html" lay-url="view/notice/notice-list.html">
+                            <i class="ri-menu-line"></i>&emsp;<cite>通知管理</cite>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-id="view/meeting/meeting-list.html" lay-url="view/meeting/meeting-list.html">
+                            <i class="ri-menu-line"></i>&emsp;<cite>会议管理</cite>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-id="view/progress/progress-list.html" lay-url="view/progress/progress-list.html">
+                            <i class="ri-menu-line"></i>&emsp;<cite>进度管理</cite>
+                        </a>
                     </li>
                     <li class="layui-nav-item">
                         <a lay-id="#" lay-url="#">
@@ -197,32 +208,27 @@
                         </a>
                     </li>
                     <li class="layui-nav-item">
-                        <a lay-id="view/website/index.html" lay-url="view/website/index.html">
-                            <i class="ri-settings-4-line"></i>&emsp;<cite>网站设置</cite>
-                        </a>
-                    </li>
-                    <li class="layui-nav-item">
                         <a lay-id="https://remixicon.com/" lay-url="https://remixicon.com/">
                             <i class="ri-remixicon-line"></i>&emsp;<cite>图标</cite>
                         </a>
                     </li>
                 </ul>
 
-                <div id="message">
-                    <div class="notification-box" lay-event="notification">
-                        <span class="notification-count">
-                            <!-- 此处可写数字 -->
-                        </span>
-                        <div class="notification-bell">
-                            <span class="bell-top"></span>
-                            <span class="bell-middle"></span>
-                            <span class="bell-bottom"></span>
-                            <span class="bell-rad"></span>
-                        </div>
-                    </div>
-                    <h3>消息通知</h3>
-                    <p>春已至,花已开,一切美好都将到来!</p>
-                </div>
+<!--                <div id="message">-->
+<!--                    <div class="notification-box" lay-event="notification">-->
+<!--                        <span class="notification-count">-->
+<!--                            &lt;!&ndash; 此处可写数字 &ndash;&gt;-->
+<!--                        </span>-->
+<!--                        <div class="notification-bell">-->
+<!--                            <span class="bell-top"></span>-->
+<!--                            <span class="bell-middle"></span>-->
+<!--                            <span class="bell-bottom"></span>-->
+<!--                            <span class="bell-rad"></span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <h3>消息通知</h3>-->
+<!--                    <p>春已至,花已开,一切美好都将到来!</p>-->
+<!--                </div>-->
 
             </div>
         </div>
