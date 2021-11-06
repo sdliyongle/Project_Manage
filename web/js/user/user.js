@@ -47,6 +47,8 @@ layui.config({
         smartReloadModel: true,
         page: true,
         id: "userListTable",
+        limits : [5,10,15,20,25],
+        limit : 5,
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
             {field: "id", title:'编号',fixed:"true", width:80},

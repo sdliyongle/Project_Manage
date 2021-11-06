@@ -1,17 +1,20 @@
 package user.controller;
 
+import org.json.JSONObject;
+import query.UserQuery;
 import user.dao.UserDao;
 import user.entity.User;
-import org.json.JSONObject;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * 用户列表
+ */
 public class UserListServlet extends HttpServlet {
     private final UserDao userDao = new UserDao();
     private static final long serialVersionUID = 1;
@@ -30,10 +33,16 @@ public class UserListServlet extends HttpServlet {
         System.out.println("进入了UserListServlet");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        List<User> listUser = userDao.userList(request.getParameter("userName"));
+        //这里看前端是否传入参数，若没有则查询全部用户，否则进行条件查询
+        int page =Integer.parseInt(request.getParameter("page"));
+        int limit = Integer.parseInt(request.getParameter("limit"));
+        String userName = request.getParameter("userName");
+        UserQuery userQuery = new UserQuery(page,limit,userName);
+        List<User> listUser = userDao.userList(userName, page, limit);
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("count",listUser.size());
+        jsonObject.put("count",userDao.queryAllUsers());
         jsonObject.put("data", listUser);
+        //这里状态码需要返回0，因为是layui数据表格模板要求
         jsonObject.put("code","0");
         System.out.println(jsonObject.toString());
         response.getWriter().write(jsonObject.toString());

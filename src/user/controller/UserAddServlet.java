@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * 增加用户
+ */
 public class UserAddServlet extends HttpServlet {
     private final UserDao userDao = new UserDao();
     private static final long serialVersionUID = 1;
@@ -35,6 +38,8 @@ public class UserAddServlet extends HttpServlet {
         user.setTrueName(request.getParameter("trueName"));
         user.setBz(request.getParameter("bz"));
         user.setRemarks(request.getParameter("remarks"));
+        String[] roleIds = request.getParameterValues("role");
+        user.setRoleId(Integer.parseInt(roleIds[0]));
         userDao.addUser(user);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("code",200);

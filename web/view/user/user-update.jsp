@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -74,12 +75,14 @@
         角色
       </label>
       <div class="layui-input-block">
-        <select name="role" xm-select="role-select"
+        <select name="role" xm-select="role-select" id="role"
                 lay-verify="required"
                 lay-vertype="tips">
           <option value="">请选择角色</option>
-          <option value="1">项目经理</option>
-          <option value="2">项目成员</option>
+          <option value="1"
+                  <c:if test="${user.roleId==2}">selected="selected"</c:if> >项目经理</option>
+          <option value="2"
+                  <c:if test="${user.roleId==3}">selected="selected"</c:if> >项目成员</option>
         </select>
       </div>
     </div>

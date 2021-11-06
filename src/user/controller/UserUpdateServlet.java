@@ -34,6 +34,8 @@ public class UserUpdateServlet extends HttpServlet {
         user.setTrueName(request.getParameter("trueName"));
         user.setBz(request.getParameter("bz"));
         user.setRemarks(request.getParameter("remarks"));
+        String[] roleIds = request.getParameterValues("role");
+        user.setRoleId(Integer.parseInt(roleIds[0]));
         System.out.println(user);
         userDao.updateUser(user);
         System.out.println("执行了用户更新!");

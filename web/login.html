@@ -19,17 +19,18 @@
 </head>
 <body class="login-bg">
 
-    <div class="login layui-anim layui-anim-up">
+    <div class="login    layui-anim layui-anim-up">
         <div class="message">项目管理子系统登录</div>
         <div id="darkbannerwrap"></div>
 
         <form method="post" class="layui-form" >
-            <input name="userName" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
+            <input name="userName" placeholder="用户名"  type="text" class="layui-input" >
             <hr class="hr15">
-            <input name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
+            <input name="password" placeholder="密码"  type="password" class="layui-input">
             <hr class="hr15">
             <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
             <hr class="hr20" >
+            <input value="注册" style="width: 100%;" type="button" onclick="javascript:window.location.href='register.html'">
         </form>
     </div>
 
