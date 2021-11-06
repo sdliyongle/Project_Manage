@@ -69,5 +69,52 @@
         <url-pattern>/device_file_servlet_action</url-pattern>
     </servlet-mapping>
     <!-- ================  device end =================           -->
+<!--    asset start-->
+    <servlet>
+        <servlet-name>AssetListServlet</servlet-name>
+        <servlet-class>asset.controller.AssetListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssetListServlet</servlet-name>
+        <url-pattern>/asset/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AssetAddServlet</servlet-name>
+        <servlet-class>asset.controller.AssetAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssetAddServlet</servlet-name>
+        <url-pattern>/asset/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AssetDeleteServlet</servlet-name>
+        <servlet-class>asset.controller.AssetDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssetDeleteServlet</servlet-name>
+        <url-pattern>/asset/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AssetToUpdateServlet</servlet-name>
+        <servlet-class>asset.controller.toUpdateAssetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssetToUpdateServlet</servlet-name>
+        <url-pattern>/asset/toUpdate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AssetUpdateServlet</servlet-name>
+        <servlet-class>asset.controller.AssetUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssetUpdateServlet</servlet-name>
+        <url-pattern>/asset/update</url-pattern>
+    </servlet-mapping>
+
+    <!--    asset end-->
 </web-app>
 
