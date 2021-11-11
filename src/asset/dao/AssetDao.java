@@ -89,12 +89,15 @@ public class AssetDao {
      * 搜索模糊查询
      * @return
      */
-    public List<Asset> assetList(String assetId) {
+    public List<Asset> assetList(String assetId, int page, int limit) {
         List<Asset> assetList = new ArrayList<>();
         String sql = "SELECT * FROM asset_table";
         if(assetId != null && (assetId.length()!=0)) {
             sql += " WHERE asset_id like '%" + assetId + "%'";
         }
+        int start = (page-1)*limit;
+        int end = limit;
+        sql = sql + " limit " + start + "," + end;
         System.out.println("构造的sql语句是："+sql);
         try {
             Connection connection = DbConn.getconn("rbac");
@@ -121,7 +124,22 @@ public class AssetDao {
         }
         return assetList;
     }
-
+    public int queryAllAssets() {
+        String sql = "SELECT count(*) as total FROM asset_table";
+        System.out.println("构造的sql语句是："+sql);
+        int totalCount = 0;
+        try {
+            Connection connection = DbConn.getconn("rbac");
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                totalCount = rs.getInt("total");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return totalCount;
+    }
     /**
      * 根据用户id查询用户
      * @param asset_id

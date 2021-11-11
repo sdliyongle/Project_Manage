@@ -63,8 +63,8 @@ public class AssetService {
      * 查看所有用户
      * @return
      */
-    public List<Asset> assetList(String assetName) {
-        return assetDao.assetList(assetName);
+    public List<Asset> assetList(String assetName, int page, int limit) {
+        return assetDao.assetList(assetName, page, limit);
     }
 
 }

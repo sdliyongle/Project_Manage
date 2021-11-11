@@ -18,6 +18,8 @@ layui.config({
         smartReloadModel: true,
         page: true,
         id: "assetListTable",
+        limits : [5,10,15,20,25],
+        limit : 5,
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
             {field: "assetId", title:'编号',fixed:"true", minWidth:80, align:"center"},
@@ -39,7 +41,7 @@ layui.config({
                 curr:1
             },
             where:{
-                asset_id: $("input[name='asset_id']").val(),  //用户名
+                assetId: $("input[name='asset_id']").val(),  //用户名
             }
         })
     })
