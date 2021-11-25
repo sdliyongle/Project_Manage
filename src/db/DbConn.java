@@ -9,7 +9,7 @@ public final class DbConn {
         Connection conn = null;
 
         String user = "root";
-        String passwd = "ZQ_xf949789978";
+        String passwd = "123456";
         String url = "jdbc:mysql://localhost:3306/"+dbName+"?serverTimezone=GMT%2B8&useSSL=false";
         //已加载完驱动
         try {

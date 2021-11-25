@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/web/index.html" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/view/asset/asset_list.html" value="file://$PROJECT_DIR$/web/view/asset" />
+        <entry key="file://$PROJECT_DIR$/web/view/meeting/meeting-list.html" value="file://$PROJECT_DIR$/web/view/meeting" />
       </map>
     </option>
   </component>

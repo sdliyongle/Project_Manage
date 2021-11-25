@@ -139,5 +139,49 @@
     </servlet-mapping>
 
     <!--    asset end-->
+    <servlet>
+        <servlet-name>MeetingListServlet</servlet-name>
+        <servlet-class>meeting.controller.UserListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MeetingListServlet</servlet-name>
+        <url-pattern>/meeting/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MeetingAddServlet</servlet-name>
+        <servlet-class>meeting.controller.UserAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MeetingAddServlet</servlet-name>
+        <url-pattern>/meeting/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MeetingDeleteServlet</servlet-name>
+        <servlet-class>meeting.controller.UserDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MeetingDeleteServlet</servlet-name>
+        <url-pattern>/meeting/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MeetingToUpdateServlet</servlet-name>
+        <servlet-class>meeting.controller.toUpdateUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MeetingToUpdateServlet</servlet-name>
+        <url-pattern>/meeting/toUpdate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MeetingUpdateServlet</servlet-name>
+        <servlet-class>meeting.controller.UserUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MeetingUpdateServlet</servlet-name>
+        <url-pattern>/meeting/update</url-pattern>
+    </servlet-mapping>
 </web-app>
 
